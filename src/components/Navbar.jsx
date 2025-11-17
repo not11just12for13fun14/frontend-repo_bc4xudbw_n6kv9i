@@ -11,8 +11,8 @@ const navItems = [
 function CTAButtons({ className = '' }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <a href="#buy" className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-2.5 text-white shadow-sm shadow-emerald-900/20 hover:bg-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 transition-colors">Buy Test</a>
-      <a href="#consult" className="inline-flex items-center justify-center rounded-full border border-emerald-900/20 bg-white/80 backdrop-blur px-5 py-2.5 text-emerald-900 shadow-sm hover:bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 transition-colors">Book Consultation</a>
+      <a href="#buy" className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-2.5 text-white shadow-sm hover:bg-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 transition-colors">Buy Test</a>
+      <a href="#consult" className="inline-flex items-center justify-center rounded-full border border-emerald-900/20 bg-white px-5 py-2.5 text-emerald-900 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 transition-colors">Book Consultation</a>
     </div>
   )
 }
@@ -21,8 +21,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 w-full z-40 bg-white/70 backdrop-blur border-b border-emerald-900/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 w-full z-40 bg-white/80 backdrop-blur border-b border-emerald-900/10">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-700 text-white"><Leaf size={18} /></span>
@@ -39,9 +39,10 @@ export default function Navbar() {
           </nav>
 
           <button
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-emerald-900 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-emerald-900 hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -49,8 +50,8 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-emerald-900/10 bg-white/90 backdrop-blur">
-          <div className="mx-auto max-w-7xl px-4 py-4 space-y-3">
+        <div className="md:hidden border-t border-emerald-900/10 bg-white/95 backdrop-blur">
+          <div className="mx-auto max-w-6xl px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.href}
